@@ -1,0 +1,416 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url(./images/afternoon.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Dongle', sans-serif;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  background-color: rgb(0, 0, 0);
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.top-part {
+  max-width: 1100px;
+  width: 100%;
+  margin: 5rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  &-passive {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  .quote {
+    width: 50%;
+    height: 100%;
+    display: flex;
+
+    &-box {
+      font-size: 35px;
+      &-author {
+        margin-top: 10px;
+        font-weight: 700;
+      }
+    }
+
+    .fa-sync-alt {
+      color: rgba(204, 204, 204, 0.767);
+      margin: 5px 0 0 5px;
+      width: 16px;
+      height: 18px;
+    }
+
+    .fa-sync-alt:hover {
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+    }
+
+    &-refresh:hover {
+      cursor: pointer;
+      filter: invert(1);
+    }
+  }
+
+  .weather {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-img {
+        height: 60px;
+        width: 60px;
+        user-select: none;
+      }
+
+      &-text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        &-temperature {
+          font-size: 75px;
+          line-height: 45px;
+        }
+
+        &-change {
+          font-size: 20px;
+          text-decoration: underline;
+          user-select: none;
+        }
+
+        &-change:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-bottom {
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      font-size: 35px;
+      margin-top: 10px;
+      line-height: 30px;
+    }
+  }
+}
+
+.bottom-part {
+  max-width: 1100px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  justify-content: space-between;
+  margin: 0 auto 5rem;
+
+  .clock {
+    &-info {
+      display: flex;
+      text-transform: uppercase;
+
+      .fa-sun {
+        color: white;
+        font-size: 40px;
+      }
+
+      &-text {
+        font-size: 50px;
+        margin-left: 20px;
+      }
+    }
+
+    &-time {
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+      &-number {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 13rem;
+      }
+
+      &-zone {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 35px;
+        margin: 0 0 20px 10px;
+        text-transform: uppercase;
+      }
+    }
+
+    &-location {
+      &-text {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    &-box {
+      background-color: rgb(255, 255, 255);
+      border-radius: 20px;
+      width: 8rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(148, 148, 148);
+
+      &-active {
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        width: 8rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(148, 148, 148);
+        margin-top: 10px;
+      }
+
+      &-active:hover {
+        cursor: pointer;
+        background-color: rgb(192, 192, 192);
+        color: rgb(255, 255, 255);
+      }
+
+      &-text {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 5px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        user-select: none;
+      }
+
+      &-fall {
+        color: rgb(255, 255, 255);
+        width: 28px;
+        height: 28px;
+        background-color: rgb(61, 61, 61);
+        border-radius: 15px;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &-box:hover {
+      cursor: pointer;
+      background-color: rgb(192, 192, 192);
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(211, 211, 211);
+  opacity: 0.94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-name {
+    font-size: 40px;
+    color: rgb(148, 148, 148);
+    text-transform: uppercase;
+  }
+
+  &-text {
+    font-size: 4.5rem;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    overflow-wrap: break-word;
+  }
+
+  &-main {
+    max-width: 1100px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    &-left {
+      width: 50%;
+      height: 100%;
+      border-right: 1px solid rgb(148, 148, 148);
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+
+    &-right {
+      width: 50%;
+      height: 100%;
+      border-left: 1px solid rgb(148, 148, 148);
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  main {
+    justify-content: space-between;
+  }
+  .top-part {
+    max-width: 600px;
+    flex-direction: column-reverse;
+    margin: 1rem auto 0;
+    .quote {
+      width: 100%;
+      margin-top: 50px;
+    }
+    .weather {
+      width: 100%;
+    }
+  }
+  .bottom-part {
+    flex-direction: column;
+    justify-content: normal;
+    flex: none;
+    max-width: 600px;
+    .clock {
+      width: 100%;
+    }
+    .button {
+      display: block;
+      width: 100%;
+
+      &-box {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .menu-text {
+    font-size: 4rem;
+  }
+
+  .time-zone {
+    margin-left: 3rem;
+  }
+
+  .day-of-year {
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .top-part {
+    max-width: 350px;
+
+    .quote {
+      &-box {
+        font-size: 25px;
+      }
+    }
+  }
+
+  .bottom-part {
+    max-width: 350px;
+    margin: 0 auto 2rem;
+    .clock {
+      &-info {
+        &-text {
+          font-size: 24px;
+        }
+
+        .fa-sun {
+          font-size: 20px;
+        }
+      }
+
+      &-time {
+        &-number {
+          font-size: 6rem;
+        }
+
+        &-zone {
+          font-size: 15px;
+          margin: 0 0 12px;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 2rem;
+    }
+
+    .clock-location-text {
+      font-size: 15px;
+    }
+  }
+
+  .menu-text {
+    font-size: 3rem;
+  }
+
+  .menu-name {
+    font-size: 30px;
+  }
+  .menu-main {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+
+    &-left {
+      width: 100%;
+      border: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-right {
+      width: 100%;
+      border: none;
+      align-items: normal;
+
+      .day-of-week {
+        margin-left: 3rem;
+      }
+
+      .week-number {
+        margin-left: 3rem;
+      }
+    }
+  }
+}
