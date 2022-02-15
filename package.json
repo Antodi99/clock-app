@@ -6,9 +6,9 @@
   "source": "src/index.html",
   "scripts": {
     "prestart": "rimraf dist",
-    "start": "parcel",
+    "start": "parcel src/index.html",
     "prebuild": "rimraf dist",
-    "build": "parcel build",
+    "build": "parcel build ./src/index.html --public-url ./",
     "prettier": "npx prettier --write .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
